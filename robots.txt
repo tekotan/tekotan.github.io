@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://tekotan.github.io/sitemap.xml
