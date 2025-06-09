@@ -1,207 +1,174 @@
 {
   "basics": {
     "name": "Tanish Baranwal",
-    "label": "Undergraduate Student",
+    "label": "AI Researcher (Gap-Year, PhD-bound)",
     "image": "",
-    "email": "tekotan@berkeley.edu",
+    "email": "tanish@berkeley.edu",
     "phone": "(510) 480-7799",
     "url": "https://tekotan.github.io/",
-    "summary": "An undergraduate student interested in pursuing a PhD in pushing the capabilities of Artificial Intelligence. Although I am exploring several niches, I am passionate about exploring the extent of which AI can solve real-world problems and am currently interested in Large Multi-Modal Models and Complex Planning.",
+    "summary": "Freshly minted EECS (Berkeley ’25) grad spending a gap-year backpacking through research labs, hack-spaces and pickup-basketball courts while polishing PhD applications. My work lives at the intersection of self-supervised video learning, diffusion generative models and large-scale system design: from zero-shot point-tracking Gaussians at BAIR to LLM-powered catalog pipelines at Amazon, to 3-D cardiac wave synthesis at UCSF. I thrive on projects that blend algorithmic novelty with real-world impact, and I love mentoring small teams, writing clean PyTorch/JAX, and turning wild ideas into reproducible benchmarks.",
     "location": {
       "address": "2298 W Cantara Dr",
-      "postalCode": "CA 94568",
+      "postalCode": "94568",
       "city": "Dublin",
       "countryCode": "US",
       "region": "California"
     },
     "profiles": [
-      {
-        "network": "Twitter",
-        "username": "tanishbaranwal",
-        "url": "https://twitter.com/tanishbaranwal"
-      }
-      {
-        "network": "LinkedIn",
-        "username": "tekotan",
-        "url": "https://linkedin.com/in/tekotan"
-      }
+      { "network": "GitHub",   "username": "tekotan", "url": "https://github.com/tekotan" },
+      { "network": "LinkedIn", "username": "btanish", "url": "https://linkedin.com/in/btanish" },
+      { "network": "Google Scholar", "username": "7Fg3KXAAAAAJ", "url": "https://scholar.google.com/citations?user=7Fg3KXAAAAAJ" },
+      { "network": "Twitter",  "username": "tanishbaranwal", "url": "https://twitter.com/tanishbaranwal" }
     ]
   },
+
   "work": [
     {
-      "name": "Cardiac Vision Labs, University of California, San Francisco",
-      "location": "San Francisco, CA, United States",
-      "position": "Student Researcher",
-      "url": "https://cardiacvision.ucsf.edu/",
-      "startDate": "2022-09-15",
+      "name": "Berkeley Artificial Intelligence Research (BAIR)",
+      "location": "Berkeley, CA · Remote while travelling",
+      "position": "Research Assistant",
+      "startDate": "2024-09-01",
       "endDate": "Present",
-      "summary": "Designed diffusion models for the generative modeling of cardiac excitation waves, achieving state-of-the-art results for imaging 3D wave dynamics, cardiac wave simulation, and parameter-specific initial condition generation to demonstrate that diffusion models have many potential applications in cardiac arrhythmia research and diagnostics",
-      "highlights": ["Presented Paper at Computing in Cardiology 2023", "Presented Paper at 2024 SIAM Annual Meeting"]
+      "summary": "Exploring next-gen video generation & understanding with Prof. Jitendra Malik. Our focus: 3-D Gaussian tokens + masked autoencoding to learn dense temporal correspondences without labels.",
+      "highlights": [
+        "Designed **Video Gaussian Masked Autoencoder (VG-MAE)** – 95 % masking, residual Gaussian deltas, explicit time-positional embeddings.",
+        "Achieved SOTA **zero-shot point tracking** on TAP-Vid Kinetics (+4.16 pp), DAVIS (+37.4 pp) and Kubric (+13.1 pp).",
+        "Led 4-person ablation squad; scaled training to 512 × 256 crops, 1 B frames on 128 A100s via FSDP + JAX pjit.",
+        "Primary author on NeurIPS 2025 submission; open-sourcing code & 10 TB synthetic dataset."
+      ]
     },
+
+    {
+      "name": "Amazon",
+      "location": "Seattle, WA",
+      "position": "Software Development Engineer Intern",
+      "startDate": "2024-05-15",
+      "endDate": "2024-08-15",
+      "summary": "Built an LLM-driven footwear-size normalization pipeline for Amazon Fashion, converting messy global sizes into a unified US scale.",
+      "highlights": [
+        "Prompt-engineered Bedrock‐Claude model achieving **85 % attribute accuracy** across 100 k SKUs; integrated human-in-loop feedback for long-tail edge cases.",
+        "Orchestrated **serverless ETL** (Step Functions + Lambda + EMR Spark) that now services a **100 M-item catalog** with <$0.03 / 1 k items compute cost.",
+        "Presented results to VP-level review; green-lit for 2026 roadmap."
+      ]
+    },
+
     {
       "name": "eGolf.ai",
-      "location": "Saratoga, CA, United States",
-      "position": "Co-founder and Chief Technology Officer",
-      "url": "https://egolf.ai/",
-      "startDate": "2022-01-20",
+      "location": "Saratoga, CA",
+      "position": "Co-Founder & Chief Technology Advisor",
+      "startDate": "2022-01-15",
       "endDate": "Present",
-      "summary": "Designed an algorithm using Short-Time Fourier Transform, spectrogram analysis, and Convolutional Neural Networks to analyze golf swing data and predict statistics like impact position, ball spin, and carry. Applied RANSAC, Kalman Filtering, and Pose2Sim to calculate athlete poses from video and motion sensors",
-      "highlights": ["4 Patent Applications"]
+      "url": "https://egolf.ai/",
+      "summary": "Bootstrapped a computer-vision platform that converts amateur golf swings into pro-level analytics.",
+      "highlights": [
+        "Invented STFT + CNN pipeline predicting impact position, spin & carry within ±3 % of TrackMan benchmarks.",
+        "Built **AWS-native backend** (S3, DynamoDB, Lambda, API Gateway) serving 500 + users, 50 k sessions, 50 TB video.",
+        "Recruited & mentored 3 interns; filed **4 US patent applications** on pose-based swing analysis."
+      ]
     },
+
     {
-      "name": "DomaniSystems Inc",
-      "location": "Shelton, CT, United States",
-      "position": "Lead Researcher",
-      "startDate": "2021-06-15",
-      "endDate": "2024-01-15",
-      "summary": "Designed a hybrid PCA-Autoencoder anomaly detection scheme to identify anomalies in mission-critical systems. Created a fault-tolerant IoT framework that combines a software-based “digital twin” and triple modular redundancy to improve the reliability of mission-critical systems without overly increasing the overall cost. Finetuned the mT5 large language model to be a multilingual chatbot that can respond in colloquial vernacular to improve a teaching app for learning East-Asian languages",
-      "highlights": ["Submitted paper to 2024 IEEE 10th World Forum on Internet of Things", "Submitted paper to Journal of Modelling and Simulation in Engineering", "Submitted paper to Journal of Electrical and Computer Engineering"]
-    },
-    {
-      "name": "Louis Lab, University of California, Santa Barbara",
-      "location": "Santa Barbara, CA, United States",
-      "position": "Student Researcher",
-      "url": "https://louis.mcdb.ucsb.edu/",
-      "startDate": "2020-09-15",
-      "endDate": "2024-04-15",
-      "summary": "Analyzed neurological differences in the locomotion of different species of the Drosophila larva and built a novel 95% accurate unsupervised behavior classifier to replace human annotators. Designed domain-specific locomotive features to train a supervised random forest algorithm to predict larval behavior modes from noisy human annotations to determine the larval decision process. Took the initiative to implement Q-learning and SARSA algorithms in MATLAB to identify differences in evolutionary circumstances that aided fellow researchers to speed up their research",
-      "highlights": []
-    },
-    {
-      "name": "Aspiring Scholars Directed Research Program",
-      "location": "San Francisco, CA, United States",
-      "position": "Senior Machine Learning Researcher",
-      "url": "https://cardiacvision.ucsf.edu/",
-      "startDate": "2020-09-15",
-      "endDate": "2022-07-15",
-      "summary": "Developed a retrosynthesis planning algorithm by screening molecules based on synthetic complexity calculated using a Gaussian Mixture Model based Autoencoder scheme. Discovered possible molecules that inhibit SARS-COV2, HIV and could act as SSRIs by identifying key chem-informatics descriptors through logistic regression-based feature importance analysis.",
-      "highlights": ["Two papers accepted at Journal of Emerging Investigators"]
+      "name": "Cardiac Vision Labs, UCSF",
+      "location": "San Francisco, CA",
+      "position": "Computer Vision Researcher",
+      "startDate": "2022-09-15",
+      "endDate": "Present",
+      "summary": "Pioneered diffusion models for 3-D cardiac excitation-wave synthesis; accelerated PDE solvers for arrhythmia simulation.",
+      "highlights": [
+        "First-author **APL Machine Learning** paper detailing DDPMs that recreate scroll-wave dynamics (PMID 39364376, DOI 10.1063/5.0194391).",
+        "Wrote C++ / OpenMP kernel achieving **37 % speed-up** over baseline Aliev-Panfilov GPU solver on 128³ domains.",
+        "Presented findings at **Computing in Cardiology 2023**; invited talk for SIAM AN24 biomedical session."
+      ]
     }
   ],
+
   "education": [
     {
       "institution": "University of California, Berkeley",
-      "location": "Berkeley, CA, United States",
-      "url": "https://www.uzh.ch/",
-      "area": "Electrical Engineering and Computer Science",
-      "studyType": "Bachelors of Science",
-      "startDate": "2022-07-20",
-      "endDate": "2026-05-15",
-      "gpa": "3.98/4.0",
-      "courses": ["Data Structures and Algorithms", "Probability and Random Processes", "Deep Neural, Networks", 
-      "Efficient Algorithms and Intractable Problems", "Intro to Computer Vision and Comp. Photography",
-      "Operating Systems and System Programming", "Physics Inspired Machine Learning", "AI for Biology and Chemistry"]
+      "location": "Berkeley, CA",
+      "url": "https://eecs.berkeley.edu/",
+      "area": "Electrical Engineering & Computer Sciences",
+      "studyType": "B.S.",
+      "startDate": "2022-08-15",
+      "endDate": "2025-05-15",
+      "gpa": "3.98 / 4.0",
+      "courses": [
+        "Probability & Random Processes",
+        "Deep Neural Networks",
+        "Efficient Algorithms & Intractable Problems",
+        "Graduate Computer Vision",
+        "Operating Systems & System Programming",
+        "Physics-Inspired Machine Learning",
+        "AI for Biology & Chemistry",
+        "Algorithmic Aspects of Machine Learning"
+      ]
     }
   ],
+
   "publications": [
     {
       "name": "Dreaming of Electrical Waves: Generative Modeling of Cardiac Excitation Waves using Diffusion Models",
-      "publisher": "American Institute of Physics",
-      "releaseDate": "1905-06-30",
-      "url": "https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies",
-      "summary": ""
+      "publisher": "APL Machine Learning",
+      "releaseDate": "2024-09-01",
+      "url": "https://doi.org/10.1063/5.0194391",
+      "summary": "Introduces diffusion generative models for realistic 3-D spiral/scroll waves; bridges data-driven AI and biophysics."
     },
     {
-      "name": "Fault-Tolerant IoT System Using Software-Based “Digital Twin",
-      "publisher": "2024 IEEE 10th World Forum on Internet of Things",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": ""
+      "name": "Fault-Tolerant IoT System Using Software-Based “Digital Twin”",
+      "publisher": "IEEE 10th World Forum on Internet of Things",
+      "releaseDate": "2024-11-13",
+      "url": "https://arxiv.org/abs/2505.24047",
+      "summary": "Proposes triplicated IoT topology augmented with software twins to sustain sensor faults at minimal cost."
     },
     {
-      "name": "Anomaly Detection of Correlated Sensor Data: An Analytical Approach",
-      "publisher": "Hindawi, Journal of Modelling and Simulation in Engineering",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": ""
-    },
-    {
-      "name": "Machine Learning-Based Anomaly Detection of Correlated Sensor Data: An Integrated Principal Component Analysis-Autoencoder Approach",
-      "publisher": "Hindawi, Journal of Electrical and Computer Engineering",
-      "releaseDate": "1905-03-18",
-      "url": "https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt",
-      "summary": ""
-    },
-    {
-      "name": "Quantitative definition of chemical synthetic pathway complexity of organic compounds",
+      "name": "Quantitative Definition of Chemical Synthetic Pathway Complexity of Organic Compounds",
       "publisher": "Journal of Emerging Investigators",
       "releaseDate": "2023-06-19",
       "url": "https://doi.org/10.59720/22-009",
       "summary": ""
     },
     {
-      "name": "Development of a novel machine learning platform to identify structural trends among NNRTI HIV-1 reverse transcriptase inhibitors",
+      "name": "Development of a Novel Machine-Learning Platform to Identify Structural Trends among NNRTI HIV-1 Reverse-Transcriptase Inhibitors",
       "publisher": "Journal of Emerging Investigators",
       "releaseDate": "2022-06-24",
       "url": "https://doi.org/10.59720/21-098",
       "summary": ""
     }
   ],
+
   "skills": [
     {
-      "name": "Programming Languages",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Python",
-        "C++/C",
-        "Matlab",
-        "Java",
-        "Rust"
-      ]
+      "name": "Programming Languages & ML",
+      "level": "Advanced",
+      "keywords": ["Python", "C++", "JAX", "MATLAB", "Java"]
     },
     {
-      "name": "Libraries",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "Tensorflow",
-        "PyTorch",
-        "Jax",
-        "OpenCV",
-        "XGBoost",
-        "SciKit-Learn"
-      ]
+      "name": "Frameworks & Libraries",
+      "level": "Advanced",
+      "keywords": ["PyTorch", "TensorFlow", "OpenCV", "XGBoost", "SciKit-Learn"]
     },
     {
-      "name": "Frameworks",
-      "level": "Master",
-      "icon": "fa-solid fa-hashtag",
-      "keywords": [
-        "AWS CDK",
-        "AWS Lambda",
-        "AWS S3",
-        "AWS EC2/ECS",
-        "Docker",
-        "Git"
-      ]
+      "name": "Cloud & DevOps",
+      "level": "Advanced",
+      "keywords": ["AWS (Lambda, S3, EMR, DynamoDB, CDK)", "Docker", "Git"]
     }
+  ],
 
-  ],
   "languages": [
-    {
-      "language": "English",
-      "fluency": "Native speaker",
-      "icon": ""
-    },
-    {
-      "language": "Hindi",
-      "fluency": "Native speaker",
-      "icon": ""
-    }
+    { "language": "English", "fluency": "Native speaker" },
+    { "language": "Hindi",   "fluency": "Native speaker" }
   ],
+
   "interests": [
     {
-      "name": "",
-      "icon": "",
+      "name": "Outside the Lab",
       "keywords": [
-        "Bodybuilding",
         "Basketball",
-        "Football",
-        "Brooklyn 99",
-        "Swimming",
-        "Going to Concerts",
+        "Strength Training",
         "Mixology",
+        "Thriller Novels",
+        "Travel",
+        "Concerts",
         "Baking"
       ]
     }
