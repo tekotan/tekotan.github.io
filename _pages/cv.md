@@ -1,7 +1,7 @@
 ---
 layout: cv
 permalink: /cv/
-title: Curriculum Vitae
+title: cv
 nav: true
 nav_order: 5
 cv_pdf: BaranwalTanish_ResumeJun2025.pdf   # <-- PDF download button
