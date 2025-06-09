@@ -76,9 +76,3 @@ San Francisco, CA · Sep 2022 – Present
 * **Languages / Frameworks:** Python, C++, MATLAB, Java, JAX, OpenCV, XGBoost, TensorFlow, PyTorch, Docker  
 * **Cloud / Tools:** AWS, MongoDB  
 * **Interests:** Bodybuilding, Basketball, Football, *Brooklyn 99*, Swimming, Concerts, Mixology, Baking
-
----
-
-### Download
-
-[Download the PDF version](BaranwalTanish_ResumeJun2025.pdf){: .btn .btn-primary }
