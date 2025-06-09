@@ -1,5 +1,13 @@
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+I’m **Tanish Baranwal**. I recently wrapped up a B.S. in Electrical Engineering & Computer Sciences at UC Berkeley (GPA 3.98) and am now taking a gap year to circle the globe, gather new perspectives, and prepare Ph.D. applications. Research remains my anchor: I’m continuing at **Berkeley AI Research** with Prof. **Jitendra Malik**, where we explore next-generation video generation and understanding models—pushing masked autoencoders and 3-D Gaussian representations toward richer temporal reasoning.
 
-Put your address / P.O. box / other info right below your picture. You can also disable any these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+During my time at Berkeley I led projects that landed SOTA results on TAP-Vid, DAVIS, and Kubric, interned at **Amazon** building LLM-driven catalog pipelines for 100 M+ products, co-founded **eGolf.ai** to turn golf swings into actionable data, and helped craft diffusion models for 3-D cardiac wave simulation at **UCSF**. I served as President of Eta Kappa Nu, and my favorite hours were still the ones spent learning something new.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+### Interests
+
+* **Research:** self-supervised video learning, generative models, SLAM, physics-inspired ML  
+* **Tech stack:** PyTorch, JAX, CUDA, Docker, Spark, AWS  
+* **Beyond the lab:** basketball pick-up games, mixology experiments, weight training, and devouring thriller novels on long flights
+
+### Looking Ahead
+
+Over the coming year you’ll find me working remotely on BAIR projects, visiting research groups worldwide, and finalizing Ph.D. proposals focused on video-centric AI. If our interests overlap—be it a research collaboration, a good book recommendation, or a new jump-shot drill—reach out. I’m always eager to learn and to share what I’ve discovered.
