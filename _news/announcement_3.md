@@ -8,6 +8,8 @@ related_posts: false
 
 I graduated from Berkeley.
 
+---
+
 Even as I type that, it still feels surreal. Four years ago, I wasn’t even sure I wanted to go here. The reputation for intense coursework, competitive students, and the overwhelming pace of life made me hesitate. I imagined myself at a different school, one with less pressure and more predictability. But as it turns out, life has a funny way of putting you exactly where you’re supposed to be—even if it doesn’t feel that way at first.
 
 ![In line before commencement ceremony](/assets/imgs/grad1.jpg)
