@@ -1,6 +1,6 @@
 ---
 layout: post
-title: I Graduated from Berkeley: Reflections from a Place I Didn't Expect to Love
+title: I Graduated from Berkeley, Reflections from a Place I Didn't Expect to Love
 date: 2025-05-21 09:00:00-0700
 inline: false
 related_posts: false
