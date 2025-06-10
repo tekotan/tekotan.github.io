@@ -5,7 +5,7 @@ title: cv
 nav: true
 nav_order: 5
 cv_pdf: BaranwalTanish_ResumeJun2025.pdf   # <-- PDF download button
-description: Download my full résumé as a PDF.
+description: You can also my full résumé as a PDF.
 toc:
   sidebar: left
 ---
@@ -14,7 +14,7 @@ toc:
 
 * **Phone:** 510-480-7799  
 * **Email:** [tanish@berkeley.edu](mailto:tanish@berkeley.edu)  
-<!-- * **LinkedIn:** [linkedin.com/in/tekotan](https://linkedin.com/in/tekotan)   -->
+* **LinkedIn:** [linkedin.com/in/tekotan](https://linkedin.com/in/tekotan)  
 * **GitHub:** [github.com/tekotan](https://github.com/tekotan)  
 * **Google Scholar:** [Profile](https://scholar.google.com/citations?user=7Fg3KXAAAAAJ)
 
