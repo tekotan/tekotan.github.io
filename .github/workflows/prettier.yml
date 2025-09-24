@@ -51,7 +51,7 @@ jobs:
         run: |
           git config user.name  "github-actions"
           git config user.email "github-actions@github.com"
-          git add -A
+          git add -A ':!**/.github/workflows/**'
           git commit -m "style: format with Prettier" || echo "No changes to commit"
           # push back to the same branch (PR head or push ref)
           BRANCH="${{ github.head_ref || github.ref_name }}"
