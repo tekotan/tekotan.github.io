@@ -15,10 +15,10 @@
       "region": "California"
     },
     "profiles": [
-      { "network": "GitHub",   "username": "tekotan", "url": "https://github.com/tekotan" },
+      { "network": "GitHub", "username": "tekotan", "url": "https://github.com/tekotan" },
       { "network": "LinkedIn", "username": "btanish", "url": "https://linkedin.com/in/btanish" },
       { "network": "Google Scholar", "username": "7Fg3KXAAAAAJ", "url": "https://scholar.google.com/citations?user=7Fg3KXAAAAAJ" },
-      { "network": "Twitter",  "username": "tanishbaranwal", "url": "https://twitter.com/tanishbaranwal" }
+      { "network": "Twitter", "username": "tanishbaranwal", "url": "https://twitter.com/tanishbaranwal" }
     ]
   },
 
@@ -37,7 +37,7 @@
         "Primary author on NeurIPS 2025 submission; open-sourcing code & 10 TB synthetic dataset."
       ]
     },
-    
+
     {
       "name": "GSA Capital",
       "location": "London, UK",
@@ -171,21 +171,13 @@
 
   "languages": [
     { "language": "English", "fluency": "Native speaker" },
-    { "language": "Hindi",   "fluency": "Native speaker" }
+    { "language": "Hindi", "fluency": "Native speaker" }
   ],
 
   "interests": [
     {
       "name": "Outside the Lab",
-      "keywords": [
-        "Basketball",
-        "Strength Training",
-        "Mixology",
-        "Thriller Novels",
-        "Travel",
-        "Concerts",
-        "Baking"
-      ]
+      "keywords": ["Basketball", "Strength Training", "Mixology", "Thriller Novels", "Travel", "Concerts", "Baking"]
     }
   ]
 }

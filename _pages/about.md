@@ -6,7 +6,7 @@ subtitle: EECS @ Berkeley ’25 · BAIR Researcher · Global-Nomad-in-Gap-Year
 
 profile:
   align: right
-  image: prof_pic.jpg          # place a jpg in /img
+  image: prof_pic.jpg # place a jpg in /img
   image_circular: true
   more_info: >
     <p><strong>Email:</strong> <a href="mailto:tanish@berkeley.edu">tanish@berkeley.edu</a><br>
@@ -24,9 +24,9 @@ During my time at Berkeley I led projects that landed SOTA results on TAP-Vid, D
 
 ### interests
 
-* **Research:** self-supervised video learning, generative models, SLAM, physics-inspired ML  
-* **Tech stack:** PyTorch, JAX, CUDA, Docker, Spark, AWS  
-* **Beyond the lab:** basketball pick-up games, mixology experiments, weight training, and devouring thriller novels on long flights
+- **Research:** self-supervised video learning, generative models, SLAM, physics-inspired ML
+- **Tech stack:** PyTorch, JAX, CUDA, Docker, Spark, AWS
+- **Beyond the lab:** basketball pick-up games, mixology experiments, weight training, and devouring thriller novels on long flights
 
 ### looking ahead
 

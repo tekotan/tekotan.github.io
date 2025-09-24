@@ -4,9 +4,9 @@ During my time at Berkeley I led projects that landed SOTA results on TAP-Vid, D
 
 ### Interests
 
-* **Research:** self-supervised video learning, generative models, SLAM, physics-inspired ML  
-* **Tech stack:** PyTorch, JAX, CUDA, Docker, Spark, AWS  
-* **Beyond the lab:** basketball pick-up games, mixology experiments, weight training, and devouring thriller novels on long flights
+- **Research:** self-supervised video learning, generative models, SLAM, physics-inspired ML
+- **Tech stack:** PyTorch, JAX, CUDA, Docker, Spark, AWS
+- **Beyond the lab:** basketball pick-up games, mixology experiments, weight training, and devouring thriller novels on long flights
 
 ### Looking Ahead
 
