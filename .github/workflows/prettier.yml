@@ -1,48 +1,86 @@
+# .github/workflows/prettier.yml
 name: Prettier code formatter
 
 on:
   pull_request:
-    branches:
-      - master
-      - main
+    branches: [ master, main ]
+    types: [opened, synchronize, reopened]
   push:
-    branches:
-      - master
-      - main
+    branches: [ master, main ]
+
+permissions:
+  contents: write   # needed to push commits
 
 jobs:
   check:
-    # available images: https://github.com/actions/runner-images#available-images
     runs-on: ubuntu-latest
+    # avoid loops when the bot pushes the "style: format" commit
+    if: ${{ github.actor != 'github-actions[bot]' }}
+
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0            # we will push back to the same branch
+          persist-credentials: true # needed for git push with GITHUB_TOKEN
+
       - name: Setup Node.js ⚙️
         uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
       - name: Install Prettier 💾
-        run: npm install --save-dev --save-exact prettier @shopify/prettier-plugin-liquid
+        run: |
+          npm ci || npm i
+          npm install --save-dev --save-exact prettier @shopify/prettier-plugin-liquid
+
       - name: Prettier Check 🔎
         id: prettier
         run: npx prettier . --check
-      - name: Create diff 📝
-        # https://docs.github.com/en/actions/learn-github-actions/expressions#failure
+
+      # --- AUTO-FIX & PUSH BACK ---
+      - name: Format with Prettier ✨
         if: ${{ failure() }}
+        run: npx prettier . --write
+
+      - name: Commit & push changes ⬆️
+        if: ${{ failure() && (github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)) }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          npx prettier . --write
+          git config user.name  "github-actions"
+          git config user.email "github-actions@github.com"
+          git add -A
+          git commit -m "style: format with Prettier" || echo "No changes to commit"
+          # push back to the same branch (PR head or push ref)
+          BRANCH="${{ github.head_ref || github.ref_name }}"
+          git push origin "HEAD:${BRANCH}"
+
+      # If we couldn't push (e.g., PR from a fork), still create a diff artifact for reviewers
+      - name: Create diff 📝
+        if: ${{ failure() && (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) }}
+        run: |
+          # files are already formatted; generate a readable HTML diff for the PR
           git diff -- . ':(exclude)package-lock.json' ':(exclude)package.json' > diff.txt
           npm install -g diff2html-cli
           diff2html -i file -s side -F diff.html -- diff.txt
+
       - name: Upload html diff ⬆️
         id: artifact-upload
-        if: ${{ failure() && steps.prettier.conclusion == 'failure' }}
+        if: ${{ failure() && (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository) }}
         uses: actions/upload-artifact@v4
         with:
           name: HTML Diff
           path: diff.html
           retention-days: 7
+
       - name: Dispatch information to repository 🗣️
-        if: ${{ failure() && steps.prettier.conclusion == 'failure' && github.event_name == 'pull_request' }}
+        if: ${{ failure() && steps.prettier.conclusion == 'failure' && github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository }}
         uses: peter-evans/repository-dispatch@v2
         with:
           event-type: prettier-failed-on-pr
-          client-payload: '{"pr_number": "${{ github.event.number }}", "artifact_url": "${{ steps.artifact-upload.outputs.artifact-url }}", "run_id": "${{ github.run_id }}"}'
+          client-payload: >-
+            {"pr_number":"${{ github.event.number }}",
+             "artifact_url":"${{ steps.artifact-upload.outputs.artifact-url }}",
+             "run_id":"${{ github.run_id }}"}
