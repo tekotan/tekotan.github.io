@@ -4,7 +4,7 @@ permalink: /cv/
 title: cv
 nav: true
 nav_order: 5
-cv_pdf: BaranwalTanish_ResumeJun2025.pdf   # <-- PDF download button
+cv_pdf: BaranwalTanish_ResumeSep2025.pdf   # <-- PDF download button
 description: You can also my full résumé as a PDF.
 toc:
   sidebar: left
