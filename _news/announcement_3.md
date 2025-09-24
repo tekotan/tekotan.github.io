@@ -18,13 +18,13 @@ When I walked into my first Eta Kappa Nu (HKN) event as a freshman, I had no ide
 
 Sophomore year, I started expanding my learning beyond EECS. I joined Venture Strategy Solutions and took on a project with Smobler, a Web3 company. That experience took me to Austin for a crypto event, where I went from barely understanding blockchain to speaking with founders building the next wave of decentralized tools. It was my first taste of thinking not just as an engineer, but as a strategist.
 
-![Me with friends waiting to walk](assets/imgs/grad2.jpg)
+![Me with friends waiting to walk](assets/img/grad2.jpg)
 
 I also pushed myself academically. I enrolled in graduate-level EECS courses and found myself sitting in intimate seminars led by world-class researchers: Angjoo Kanazawa, Alyosha Efros, Aditi Krishnapriyan, and Jitendra Malik. They didn’t just teach—they modeled what it looked like to be curious, playful, and rigorous in their research. That inspiration led me to join BAIR and UCSF’s Cardiac Vision Lab. I explored generative modeling, contributed to video understanding research, and published a first-author paper in APL Machine Learning. I learned to write, to collaborate, to lead, and most importantly, to care deeply about the questions I was asking.
 
 But Berkeley wasn’t just about academics. It shaped who I became as a person. Through HKN, I went from being mentored to mentoring others—whether that was tutoring, organizing senior tech support events, or leading our chapter as President. I found myself drawn to community-building, making sure that everyone—from prospective freshmen to seasoned faculty—felt like they had a place here.
 
-![Post-walk selfie with the chair](imgs/grad3.jpg)
+![Post-walk selfie with the chair](img/grad3.jpg)
 
 I also learned how to celebrate the journey. I joined in Cal Day panels, cheered until I lost my voice at College Game Day, and rushed the field after a Big Game victory over Stanford I’ll never forget. Berkeley taught me that success isn’t just what you accomplish—it’s also how you show up for others and enjoy the ride along the way.
 
