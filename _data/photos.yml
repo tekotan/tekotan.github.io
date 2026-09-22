@@ -1,0 +1,7 @@
+# Optional captions and image descriptions, keyed by filename (including extension).
+# Use unique filenames across the film and digital folders.
+# Example:
+# 2026-09-kyoto.jpg:
+#   caption: "Kyoto, September 2026 · Kodak Gold 200"
+#   alt: "A narrow street in Kyoto at dusk"
+{}

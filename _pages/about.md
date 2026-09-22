@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: EECS @ Berkeley ’25 · BAIR Researcher · Global-Nomad-in-Gap-Year
+subtitle: Incoming DPhil (PhD) student at Oxford · Meta AI PhD Program
 
 profile:
   align: right
@@ -11,23 +11,19 @@ profile:
   more_info: >
     <p><strong>Email:</strong> <a href="mailto:tanish@berkeley.edu">tanish@berkeley.edu</a><br>
     <strong>Phone:</strong> 510-480-7799</p>
-    <p>B.S. EECS, University of California Berkeley ’25</p>
+    <p>University of Oxford · St Anne’s College<br>
+    B.S. EECS, UC Berkeley ’25</p>
+    <p><a href="/assets/pdf/BaranwalTanish_ResumeSept2026.pdf" download>Download resume (PDF)</a></p>
 
 news: true
 selected_papers: true
 social: true
 ---
 
-I’m **Tanish Baranwal**. I recently wrapped up a B.S. in Electrical Engineering & Computer Sciences at UC Berkeley (GPA 3.98) and am now taking a gap year to circle the globe, gather new perspectives, and prepare Ph.D. applications. Research remains my anchor: I’m continuing at **Berkeley AI Research** with Prof. **Jitendra Malik**, where we explore next-generation video generation and understanding models—pushing masked autoencoders and 3-D Gaussian representations toward richer temporal reasoning.
+Hey! I’m Tanish. I’m starting a DPhil in Engineering Science at Oxford through the Meta AI PhD Program, supervised by Dr. Jakob Foerster and Dr. João F. Henriques. I studied EECS at UC Berkeley, where I worked with Dr. Jitendra Malik at BAIR.
 
-During my time at Berkeley I led projects that landed SOTA results on TAP-Vid, DAVIS, and Kubric, interned at **Amazon** building LLM-driven catalog pipelines for 100 M+ products, co-founded **eGolf.ai** to turn golf swings into actionable data, and helped craft diffusion models for 3-D cardiac wave simulation at **UCSF**. I served as President of Eta Kappa Nu, and my favorite hours were still the ones spent learning something new.
+I keep coming back to how we learn through exploration and curiosity. I’m interested in how priors and pretraining can help models learn faster and from less data while still scaling well. I want my research to make a positive difference in the world.
 
-### interests
+I love learning and picking up new things. Outside of research, I enjoy trying new restaurants and coffee shops in London and SF, coffee and cocktail making, going to the gym, and getting lost in a thriller novel.
 
-- **Research:** self-supervised video learning, generative models, SLAM, physics-inspired ML
-- **Tech stack:** PyTorch, JAX, CUDA, Docker, Spark, AWS
-- **Beyond the lab:** basketball pick-up games, mixology experiments, weight training, and devouring thriller novels on long flights
-
-### looking ahead
-
-Over the coming year you’ll find me working remotely on BAIR projects, visiting research groups worldwide, and finalizing Ph.D. proposals focused on video-centric AI. If our interests overlap—be it a research collaboration, a good book recommendation, or a new jump-shot drill—reach out. I’m always eager to learn and to share what I’ve discovered.
+I just finished a gap year visiting 12 countries. I’ve recently gotten into film photography and am looking for a secondhand digital camera. Watching animals and birds makes me feel grounded and gives me a break from everything else.

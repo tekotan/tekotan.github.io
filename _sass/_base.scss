@@ -373,7 +373,7 @@ ul.task-list input[type="checkbox"] {
   text-align: center;
 
   .contact-icons {
-    font-size: 4rem;
+    font-size: 2rem;
 
     a {
       i::before {
@@ -1133,4 +1133,36 @@ ninja-keys::part(ninja-input) {
 }
 ninja-keys::part(ninja-input-wrapper) {
   background: var(--global-bg-color);
+}
+
+// Photo gallery: preserve each photo's full frame.
+.photo-section {
+  margin-bottom: 2rem;
+}
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+
+  .photo-gallery-item {
+    margin: 0;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    figcaption {
+      margin-top: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--global-text-color-light);
+    }
+  }
+
+  @media (max-width: 575px) {
+    grid-template-columns: 1fr;
+  }
 }
