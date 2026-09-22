@@ -9,8 +9,8 @@ profile:
   image: prof_pic.jpg # place a jpg in /img
   image_circular: true
   more_info: >
-    <p><strong>Email:</strong> <a href="mailto:tanish@berkeley.edu">tanish@berkeley.edu</a><br>
-    <strong>Phone:</strong> 510-480-7799</p>
+    <p><strong>Email:</strong> <a href="mailto:tekotan@berkeley.edu">tekotan [at] berkeley.edu</a><br>
+    <strong>Phone:</strong> +1 510-480-7799</p>
     <p>University of Oxford · St Anne’s College<br>
     B.S. EECS, UC Berkeley ’25</p>
     <p><a href="/assets/pdf/BaranwalTanish_ResumeSept2026.pdf" download>Download resume (PDF)</a></p>
