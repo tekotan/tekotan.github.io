@@ -6,9 +6,12 @@ description: A few favorites, on film and digital.
 nav: true
 nav_order: 3
 ---
-
-{% assign categories = 'film,digital' | split: ',' %} {% assign photo_count = 0 %} {% assign files = site.static_files | sort: 'path' | reverse %} {%
-for category in categories %} {% assign folder = '/assets/photos/' | append: category | append: '/' %} {% capture gallery %} {% for file in files %}
+{% assign categories = 'film,digital' | split: ',' %}
+{% assign photo_count = 0 %}
+{% assign files = site.static_files | sort: 'path' | reverse %}
+{% for category in categories %}
+  {% assign folder = '/assets/photos/' | append: category | append: '/' %}
+  {% capture gallery %} {% for file in files %}
 {% assign extension = file.extname | downcase %} {% if file.path contains folder %} {% if extension == '.jpg' or extension == '.jpeg' or extension ==
 '.png' or extension == '.webp' %} {% assign photo_count = photo_count | plus: 1 %} {% assign metadata = site.data.photos[file.name] %} {% assign
 fallback_alt = file.basename | replace: '-', ' ' | replace: '_', ' ' %}
@@ -20,11 +23,15 @@ fallback_alt = file.basename | replace: '-', ' ' | replace: '_', ' ' %}
   <figcaption>{{ metadata.caption | escape }}</figcaption>
   {% endif %}
 </figure>
-{% endif %} {% endif %} {% endfor %} {% endcapture %} {% assign gallery = gallery | strip %} {% if gallery != '' %}
-<section class="photo-section" aria-labelledby="photos-{{ category }}">
-  <h2 id="photos-{{ category }}">{{ category }}</h2>
-  <div class="photo-gallery">{{ gallery }}</div>
-</section>
-{% endif %} {% endfor %} {% if photo_count == 0 %}
-<p>Photos coming soon.</p>
+{% endif %} {% endif %} {% endfor %} {% endcapture %}
+  {% assign gallery = gallery | strip %}
+  {% if gallery != '' %}
+    <section class="photo-section" aria-labelledby="photos-{{ category }}">
+      <h2 id="photos-{{ category }}">{{ category }}</h2>
+      <div class="photo-gallery">{{ gallery }}</div>
+    </section>
+  {% endif %}
+{% endfor %}
+{% if photo_count == 0 %}
+  <p>Photos coming soon.</p>
 {% endif %}

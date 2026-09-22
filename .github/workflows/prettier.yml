@@ -32,8 +32,7 @@ jobs:
 
       - name: Install Prettier 💾
         run: |
-          npm ci || npm i
-          npm install --save-dev --save-exact prettier @shopify/prettier-plugin-liquid
+          npm ci
 
       - name: Prettier Check 🔎
         id: prettier

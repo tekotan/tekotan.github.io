@@ -1,0 +1,2 @@
+# Unsplash blocks automated requests with HTTP 401; this is a valid attribution URL.
+^https://unsplash\.com/?$
