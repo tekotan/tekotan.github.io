@@ -18,4 +18,3 @@ Crawl date for the live site: 2026-01-17.
 - Publications: `_pages/publications.md` + `_bibliography/papers.bib`
 - CV: `_pages/cv.md` + `assets/json/resume.json` (via `jekyll_get_json`)
 - News listing: `_pages/news.md` + `_news/*.md`
-

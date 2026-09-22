@@ -27,4 +27,3 @@
 - CV PDFs: `assets/pdf/`.
 - Demo media assets used by sample posts/projects:
   - `assets/audio/`, `assets/video/`, `assets/plotly/`, `assets/jupyter/`, `assets/bibliography/`.
-

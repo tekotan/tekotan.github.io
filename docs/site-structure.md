@@ -28,4 +28,3 @@
 6. SCSS in `assets/css/main.scss` pulls from `_sass/` and compiles into site CSS.
 7. Static files in `assets/` are copied into the output unless excluded.
 8. Output is written to `_site/` during build.
-

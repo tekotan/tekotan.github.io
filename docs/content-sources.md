@@ -33,4 +33,3 @@ This file lists the primary content inputs and how they map into rendered pages.
 - Profile + news images: `assets/img/`.
 - CV PDF downloads: `assets/pdf/`.
 - Audio/video/plotly/jupyter demo assets: `assets/audio`, `assets/video`, `assets/plotly`, `assets/jupyter`.
-
