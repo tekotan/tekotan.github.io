@@ -1,7 +1,80 @@
-# Optional captions and image descriptions, keyed by filename (including extension).
-# Use unique filenames across the film and digital folders.
+# Photo metadata, keyed by filename (including extension).
+# Use unique filenames in the gallery folder.
 # Example:
 # 2026-09-kyoto.jpg:
-#   caption: "Kyoto, September 2026 · Kodak Gold 200"
+#   date: "September 2026"
+#   memory: "A narrow street after dinner"
+#   medium: film
 #   alt: "A narrow street in Kyoto at dusk"
-{}
+IMG_4576.JPG:
+  date: "May 2026"
+  memory: "Sowers Harvest Cafe"
+  medium: film
+IMG_4588.JPG:
+  date: "April 2026"
+  memory: "Stroll through Penn State campus"
+  medium: film
+IMG_4655.JPG:
+  date: "May 2026"
+  memory: "Drive along Pacifica, CA coastline, part 1"
+  medium: film
+IMG_4656.JPG:
+  date: "May 2026"
+  memory: "Drive along Pacifica, CA coastline, part 2"
+  medium: film
+IMG_4659.JPG:
+  date: "May 2026"
+  memory: "Glamping with friends"
+  medium: film
+IMG_4662.JPG:
+  date: "May 2026"
+  memory: "Morning view from the RV"
+  medium: film
+IMG_4663.JPG:
+  date: "May 2026"
+  memory: "Tunes and chill 🎶"
+  medium: film
+IMG_5383.jpg:
+  date: "June 2026"
+  memory: "Denver skyline during CVPR"
+  medium: digital
+IMG_5393.jpg:
+  date: "June 2026"
+  memory: "On the way home from a successful CVPR"
+  medium: digital
+IMG_5688.JPG:
+  date: "May 2026"
+  memory: "Lands End, San Francisco"
+  medium: film
+IMG_5715.JPG:
+  date: "June 2026"
+  memory: "Visiting Solvang with my family"
+  medium: film
+IMG_5719.JPG:
+  date: "June 2026"
+  memory: "🍺"
+  medium: film
+IMG_5723.JPG:
+  date: "June 2026"
+  memory: "Last Cheeseboard before London"
+  medium: film
+IMG_5742.JPG:
+  date: "June 2026"
+  memory: "Last Giants game before London"
+  medium: film
+IMG_5722.JPG:
+  date: "June 2026"
+  memory: "My girlfriend trying Cheeseboard"
+  medium: film
+IMG_6559.jpg:
+  date: "August 2026"
+  memory: "Walk along Regent's Canal"
+  medium: digital
+IMG_6422.jpg:
+  date: "August 2026"
+  memory: "Rock tower in Dorset 🧘🏻‍♀️"
+  medium: digital
+IMG_6424.jpg:
+  date: "August 2026"
+  memory: "Cool tree while hiking to Swanage"
+  medium: digital
