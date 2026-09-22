@@ -28,4 +28,3 @@
 - Styling is SCSS-first with a single entry file (`assets/css/main.scss`).
 - Static assets are kept in `assets/` and referenced directly from pages/includes.
 - Feature toggles (dark mode, search, progress bar, masonry, etc.) are set in `_config.yml`.
-

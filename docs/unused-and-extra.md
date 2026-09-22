@@ -43,4 +43,3 @@ These are rendered by Jekyll but have no links from the live navbar or homepage:
 ## Note on CV content
 
 The markdown body of `_pages/cv.md` is not rendered by `_layouts/cv.liquid`. The CV page uses JSON data from `assets/json/resume.json` instead.
-
