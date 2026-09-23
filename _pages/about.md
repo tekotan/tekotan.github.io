@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg # place a jpg in /img
   image_circular: true
   more_info: >
-    <p><strong>Email:</strong> <a href="mailto:tekotan@berkeley.edu">tekotan [at] berkeley.edu</a><br>
+    <p><strong>Email:</strong> tekotan[at]berkeley.edu<br>
     <strong>Phone:</strong> +1 510-480-7799</p>
     <p>University of Oxford · St Anne’s College<br>
     B.S. EECS, UC Berkeley ’25</p>
@@ -22,7 +22,7 @@ social: true
 
 Hey! I’m Tanish. I’m starting a DPhil in Engineering Science at Oxford through the Meta AI PhD Program, supervised by Jakob Foerster and João F. Henriques. I studied EECS at UC Berkeley, where I worked with Dr. Jitendra Malik at BAIR.
 
-I've spent the last two summers exploring quant research at GSA Capital, but I'm still enamored by how we learn through exploration and curiosity. I’m interested in how priors and pretraining can help models learn faster and from less data while still scaling well. I want my research to make a positive difference in the world.
+I’ve spent the past two summers doing quantitative research at GSA Capital, while my main focus is AI research. I’m interested in new architectures, objectives, and pretraining methods that help models learn efficiently, scale, and generalize. I’m especially excited about applying these advances to scientific discovery and education. I want my research to make a positive difference in the world.
 
 I love learning and picking up new things. Outside of research, I enjoy trying new restaurants and coffee shops in London and SF, coffee and cocktail making, going to the gym, and getting lost in a thriller novel.
 
