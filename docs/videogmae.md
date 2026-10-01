@@ -8,6 +8,8 @@ The project repository stays private. Add a fine-grained GitHub token with **Con
 
 The published URL is <https://tekotan.github.io/videogmae/>. After pushing project changes, run the personal website's **Deploy site** workflow from GitHub Actions to refresh this copy. Personal website deployments also fetch the latest project version automatically.
 
+For local previews, serve the original project repository with `python3 -m http.server 8081` and open `http://localhost:8081/`. The hostname-specific redirect is inactive on localhost, so you can continue editing and previewing the project independently.
+
 The project repository keeps its `CNAME` for `videogmae.org` and its current GitHub Pages and DNS configuration. A hostname-specific browser redirect in its homepage sends visitors from `videogmae.org` or `www.videogmae.org` to the new URL, preserving query strings and section anchors. It does not redirect visitors at the new URL.
 
 Publish and verify the personal website first, then publish the project repository's redirect. GitHub Pages does not provide configurable HTTP redirects; this redirect uses JavaScript.

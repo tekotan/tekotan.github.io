@@ -2,6 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <script>
+    if (window.location.hostname === "videogmae.org" || window.location.hostname === "www.videogmae.org") {
+      window.location.replace("https://tekotan.github.io/videogmae/" + window.location.search + window.location.hash);
+    }
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Video-GMAE: Tracking by Predicting 3-D Gaussians Over Time. A masked autoencoder learns video as moving 3-D Gaussians, enabling zero-shot and fine-tuned point tracking.">
   <meta name="keywords" content="Video-GMAE, 3-D Gaussians, 3D Gaussians, zero-shot tracking, Gaussian splatting, masked video autoencoder, point tracking, computer vision, CVPR 2026">
