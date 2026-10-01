@@ -65,6 +65,14 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v5
+      - name: Checkout Video-GMAE project
+        uses: actions/checkout@v5
+        with:
+          repository: tekotan/video-gmae.github.io
+          ref: master
+          token: ${{ secrets.VIDEOGMAE_READ_TOKEN }}
+          path: _project-site
+          persist-credentials: false
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -88,6 +96,11 @@ jobs:
         run: |
           npm install -g purgecss
           purgecss -c purgecss.config.js
+      - name: Include Video-GMAE project
+        run: |
+          mkdir -p _site/videogmae
+          cp _project-site/index.html _site/videogmae/
+          cp -R _project-site/files _project-site/build _site/videogmae/
       - name: Deploy 🚀
         if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
