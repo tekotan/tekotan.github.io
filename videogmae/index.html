@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Video-GMAE: Tracking by Predicting 3-D Gaussians Over Time. A masked autoencoder learns video as moving 3-D Gaussians, enabling zero-shot and fine-tuned point tracking.">
+  <meta name="keywords" content="Video-GMAE, 3-D Gaussians, 3D Gaussians, zero-shot tracking, Gaussian splatting, masked video autoencoder, point tracking, computer vision, CVPR 2026">
+  <meta name="title" content="Tracking by Predicting 3-D Gaussians Over Time">
+  <meta name="citation_title" content="Tracking by Predicting 3-D Gaussians Over Time">
+  <meta name="citation_pdf_url" content="https://openaccess.thecvf.com/content/CVPR2026/papers/Baranwal_Tracking_by_Predicting_3-D_Gaussians_Over_Time_CVPR_2026_paper.pdf">
+  <meta name="citation_author" content="Baranwal, Tanish">
+  <meta name="citation_author" content="Singh, Himanshu Gaurav">
+  <meta name="citation_author" content="Rajasegaran, Jathushan">
+  <meta name="citation_author" content="Malik, Jitendra">
+  <meta name="citation_conference_title" content="CVPR 2026">
+  <meta name="citation_firstpage" content="42527">
+  <meta name="citation_lastpage" content="42537">
+  <meta name="citation_publication_date" content="2026/06">
+  <meta name="DC.title" content="Tracking by Predicting 3-D Gaussians Over Time">
+  <meta property="article:tag" content="Tracking by Predicting 3-D Gaussians Over Time">
+  <meta property="article:tag" content="Tracking by Predicting 3D Gaussians Over Time">
+  <meta name="author" content="Tanish Baranwal, Himanshu Gaurav Singh, Jathushan Rajasegaran, Jitendra Malik">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="theme-color" content="#111214">
+  <link rel="canonical" href="https://tekotan.github.io/videogmae/">
+  <link rel="alternate" type="application/pdf" href="https://tekotan.github.io/videogmae/files/assets/video_gmae_paper.pdf" title="Tracking by Predicting 3-D Gaussians Over Time (PDF)">
+  <title>Tracking by Predicting 3-D Gaussians Over Time | Video-GMAE</title>
+  <link rel="icon" href="./build/icon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="./build/icon-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="./build/icon-180.png">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preload" href="./files/site.css?v=media-layout-2" as="style">
+  <link rel="preload" href="./files/assets/intro.webp" as="image" type="image/webp" fetchpriority="high">
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link href="./files/site.css?v=media-layout-2" rel="stylesheet">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Video-GMAE">
+  <meta property="og:title" content="Tracking by Predicting 3-D Gaussians Over Time">
+  <meta property="og:description" content="Tracking emerges for free: a masked autoencoder learns video as moving 3-D Gaussians and yields point tracks with zero tracking labels.">
+  <meta property="og:url" content="https://tekotan.github.io/videogmae/">
+  <meta property="og:image" content="https://tekotan.github.io/videogmae/files/assets/intro.png">
+  <meta property="og:image:alt" content="Overview figure of Video-GMAE: Tracking by Predicting 3-D Gaussians Over Time">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tracking by Predicting 3-D Gaussians Over Time">
+  <meta name="twitter:description" content="Zero-shot and fine-tuned point tracking with moving 3-D Gaussians. Watch results and read the Video-GMAE paper.">
+  <meta name="twitter:image" content="https://tekotan.github.io/videogmae/files/assets/intro.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "Tracking by Predicting 3-D Gaussians Over Time",
+    "headline": "Tracking by Predicting 3-D Gaussians Over Time",
+    "alternateName": [
+      "Tracking by Predicting 3D Gaussians Over Time",
+      "Video-GMAE"
+    ],
+    "description": "A masked autoencoder learns video as moving 3-D Gaussians, enabling zero-shot and fine-tuned point tracking.",
+    "keywords": [
+      "Video-GMAE",
+      "Tracking by Predicting 3-D Gaussians Over Time",
+      "3-D Gaussians",
+      "zero-shot tracking",
+      "Gaussian splatting",
+      "video masked autoencoder",
+      "computer vision"
+    ],
+    "author": [
+      { "@type": "Person", "name": "Tanish Baranwal" },
+      { "@type": "Person", "name": "Himanshu Gaurav Singh" },
+      { "@type": "Person", "name": "Jathushan Rajasegaran" },
+      { "@type": "Person", "name": "Jitendra Malik" }
+    ],
+    "publisher": {
+      "@type": "Organization",
+      "name": "IEEE/CVF",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://tekotan.github.io/videogmae/build/icon-192.png"
+      }
+    },
+    "datePublished": "2026-06",
+    "inLanguage": "en",
+    "url": "https://tekotan.github.io/videogmae/",
+    "sameAs": [
+      "https://openaccess.thecvf.com/content/CVPR2026/html/Baranwal_Tracking_by_Predicting_3-D_Gaussians_Over_Time_CVPR_2026_paper.html",
+      "https://arxiv.org/abs/2512.22489"
+    ],
+    "identifier": [
+      "CVPR 2026:42527-42537",
+      "arXiv:2512.22489"
+    ],
+    "image": "https://tekotan.github.io/videogmae/files/assets/intro.png",
+    "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "isAccessibleForFree": true,
+    "encoding": [
+      {
+        "@type": "MediaObject",
+        "contentUrl": "https://openaccess.thecvf.com/content/CVPR2026/papers/Baranwal_Tracking_by_Predicting_3-D_Gaussians_Over_Time_CVPR_2026_paper.pdf",
+        "encodingFormat": "application/pdf",
+        "name": "Paper PDF"
+      },
+      {
+        "@type": "MediaObject",
+        "contentUrl": "https://tekotan.github.io/videogmae/files/assets/video-gaussian-supplementary.pdf",
+        "encodingFormat": "application/pdf",
+        "name": "Supplementary PDF"
+      },
+      {
+        "@type": "MediaObject",
+        "contentUrl": "https://tekotan.github.io/videogmae/files/assets/video-gaussian-supplemental.zip",
+        "encodingFormat": "application/zip",
+        "name": "Video Assets ZIP"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <nav class="side-nav" aria-label="Section navigation">
+    <ul>
+      <li data-section="top"><span class="dot"></span><span class="label">Overview</span></li>
+      <li data-section="idea"><span class="dot"></span><span class="label">Idea</span></li>
+      <li data-section="method"><span class="dot"></span><span class="label">Method</span></li>
+      <li data-section="results"><span class="dot"></span><span class="label">Results</span></li>
+      <li data-section="zeroshot"><span class="dot"></span><span class="label">Zero-shot</span></li>
+      <li data-section="comparisons"><span class="dot"></span><span class="label">Comparisons</span></li>
+      <li data-section="finetune"><span class="dot"></span><span class="label">Fine-tuned</span></li>
+      <li data-section="recon"><span class="dot"></span><span class="label">Recon</span></li>
+      <li data-section="quantitative"><span class="dot"></span><span class="label">Benchmarks</span></li>
+      <li data-section="limitations"><span class="dot"></span><span class="label">Limits</span></li>
+      <li data-section="bibtex"><span class="dot"></span><span class="label">BibTeX</span></li>
+    </ul>
+    <div class="progress-bar"><div class="progress"></div></div>
+  </nav>
+
+  <main class="site-sheet">
+    <section class="content hero" id="top">
+      <header class="masthead">
+        <div class="brand">
+          <picture>
+            <source srcset="./files/assets/berkeley-seal.webp" type="image/webp">
+            <img class="seal" src="./files/assets/berkeley-seal.png" alt="UC Berkeley seal" width="960" height="960">
+          </picture>
+          <div>
+            <div class="org-name">University of California, Berkeley</div>
+            <div class="org-sub">Berkeley Artificial Intelligence Research</div>
+          </div>
+          <span class="pill">CVPR 2026 · Highlight</span>
+        </div>
+      </header>
+
+      <div class="titleband">
+        <div>
+          <p class="kicker"><span class="num">Video-GMAE</span> Point tracking from Gaussian motion</p>
+          <h1><span class="line">Tracking by Predicting</span><span class="line">3-D Gaussians Over Time</span></h1>
+          <div class="authors" aria-label="Authors">
+            <span>Tanish Baranwal</span>
+            <span>Himanshu Gaurav Singh</span>
+            <span>Jathushan Rajasegaran</span>
+            <span>Jitendra Malik</span>
+          </div>
+        </div>
+        <div class="tagline">
+          <div class="big">Tracking emerges <b>for free.</b></div>
+          <p>A masked autoencoder learns video as moving 3-D Gaussians, and a point tracker falls out with zero tracking labels.</p>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        <figure class="media-frame approach">
+          <picture>
+            <source srcset="./files/assets/intro.webp" type="image/webp">
+            <img src="./files/assets/intro.png" alt="Video-GMAE overview figure" width="1756" height="922" loading="eager" decoding="async" fetchpriority="high">
+          </picture>
+        </figure>
+        <figure class="media-frame hero-video">
+          <video autoplay loop muted playsinline preload="metadata" width="672" height="672" poster="./files/assets/zeroshot-davis-thumb.webp" data-poster-dark="./files/assets/zeroshot-davis-thumb.webp" data-poster-light="./files/assets/zeroshot-davis-thumb-light.webp">
+            <source src="./files/assets/zeroshot-davis-opt.mp4" type="video/mp4">
+          </video>
+          <figcaption>Zero-shot tracks from Gaussian motion on DAVIS.</figcaption>
+        </figure>
+      </div>
+
+      <div class="setup-strip" aria-label="Pretraining setup">
+        <div class="stat"><span class="num">95<small>%</small></span><span class="lab">masked video tokens</span></div>
+        <div class="stat"><span class="num">16</span><span class="lab">frames per clip</span></div>
+        <div class="stat"><span class="num">256</span><span class="lab">Gaussians per frame</span></div>
+        <div class="stat accent"><span class="num">0</span><span class="lab">tracking labels</span></div>
+        <div class="stat wide"><span class="num">Kinetics · Kubric · DAVIS</span><span class="lab">unlabeled pretraining video</span></div>
+      </div>
+
+      <div class="nav-row compact" aria-label="Project links">
+        <a class="btn primary" href="https://openaccess.thecvf.com/content/CVPR2026/html/Baranwal_Tracking_by_Predicting_3-D_Gaussians_Over_Time_CVPR_2026_paper.html" target="_blank" rel="noopener">
+          <span class="ms">description</span> Paper
+        </a>
+        <a class="btn" href="./files/assets/video-gaussian-supplementary.pdf" target="_blank" rel="noopener">
+          <span class="ms">library_books</span> Supplementary
+        </a>
+        <a class="btn" href="./files/assets/video-gaussian-supplemental.zip" target="_blank" rel="noopener">
+          <span class="ms">movie</span> Videos
+        </a>
+        <a class="btn" href="https://github.com/tekotan/video-gmae" target="_blank" rel="noopener">
+          <span class="ms">code</span> Code
+        </a>
+        <a class="btn" href="https://arxiv.org/abs/2512.22489" target="_blank" rel="noopener">
+          <span class="ms">article</span> arXiv
+        </a>
+      </div>
+    </section>
+
+    <section class="content" id="idea">
+      <p class="kicker"><span class="num">01</span> The idea</p>
+      <h2>Video as <span class="accent-text">moving</span> 3-D Gaussians</h2>
+
+      <div class="idea-grid">
+        <div class="card">
+          <h3>Each primitive keeps its identity</h3>
+          <p>Motion is residual ΔG, so a Gaussian at frame t is the same Gaussian at t+1.</p>
+        </div>
+        <div class="card">
+          <h3>Correspondence as a 3-D prior</h3>
+          <p>Encoding video as moving Gaussians makes the SSL task harder and pushes latents toward long-range correspondence.</p>
+        </div>
+        <div class="card">
+          <h3>Only part of each primitive moves</h3>
+          <p>The 3-D mean μ and color r receive per-frame residuals; scale, rotation, and opacity stay fixed.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="method">
+      <p class="kicker"><span class="num">02</span> Method pipeline</p>
+      <h2>Pretrain, read out, fine-tune</h2>
+
+      <div class="tabs" id="method-tabs" role="tablist" aria-label="Method views">
+        <button class="tab active" type="button" data-panel="pretrain">Pretraining</button>
+        <button class="tab" type="button" data-panel="zeroshot">Zero-shot</button>
+        <button class="tab" type="button" data-panel="finetune">Fine-tuning</button>
+      </div>
+      <div class="tab-panels" id="method-panels">
+        <div class="tab-panel active" data-panel="pretrain">
+          <figure class="figure-panel">
+            <img src="./files/assets/pretraining2.png" alt="Pretraining pipeline with Gaussian splatting" width="1660" height="1140" loading="lazy" decoding="async">
+            <figcaption>Video masked autoencoding through Gaussian splatting: the decoder predicts a moving Gaussian scene, then reconstruction closes the loop.</figcaption>
+          </figure>
+        </div>
+        <div class="tab-panel" data-panel="zeroshot">
+          <div class="method-split">
+            <figure class="figure-panel">
+              <picture>
+                <source srcset="./files/assets/zeroshot2.webp" type="image/webp">
+                <img src="./files/assets/zeroshot2.png" alt="Zero-shot tracking schematic" width="1022" height="980" loading="lazy" decoding="async">
+              </picture>
+              <figcaption>Render Gaussian displacement into image-plane flow, then advect query points.</figcaption>
+            </figure>
+            <div class="algo">
+              <div class="alab"><span>Zero-shot track</span><b>no labels · no flow · no boxes</b></div>
+              <div class="algo-equations" aria-label="Zero-shot tracking equations">
+                <div><span class="eq-label">Project</span><span>\(x_i^{(t)} = \Pi(K[R|t], \mu_i^{(t)})\)</span></div>
+                <div><span class="eq-label">Displace</span><span>\(\Delta x_i^{(t+1)} = x_i^{(t+1)} - x_i^{(t)}\)</span></div>
+                <div><span class="eq-label">Render flow</span><span>\(F^{(t)}(u) = \sum_{i=1}^{n}\alpha_i^{(t)}(u)\cdot\Delta x_i^{(t)}\)</span></div>
+              </div>
+              <ol>
+                <li><span class="n">1</span><span>Predict Gaussian means through time with \(\mu_i^{(t+1)}=\mu_i^{(t)}+\Delta\mu_i^{(t)}\), then project the same primitives at adjacent frames into image coordinates.</span></li>
+                <li><span class="n">2</span><span>Replace each Gaussian's color with its 2-D displacement \((\Delta x_{i,x}^{(t)}, \Delta x_{i,y}^{(t)}, 0)\) and splat those values with the renderer's opacity weights to obtain dense flow \(F^{(t)}\).</span></li>
+                <li><span class="n">3</span><span>For each query point, bilinearly sample flow and opacity at \(p^{(t)}\). The pure flow proposal is \(a^{(t)}=p^{(t)}+F^{(t)}(p^{(t)})\).</span></li>
+                <li><span class="n">4</span><span>Fix a top-k anchor set \(\mathcal{S}\) from frame 0, compute anchor mass \(\omega^{(t)}=\sum_{i\in\mathcal{S}}\alpha_i^{(t)}(p^{(t)})\), and renormalize anchor weights \(\tilde{\pi}_i^{(t)}\).</span></li>
+                <li><span class="n">5</span><span>Use the anchor proposal \(s^{(t+1)}=\sum_{i\in\mathcal{S}}\tilde{\pi}_i^{(t)}(x_i^{(t)}+\Delta x_i^{(t+1)})\) to preserve identity around occlusion.</span></li>
+                <li><span class="n">6</span><span>If \(\omega^{(t)}\ge\tau_{\mathrm{vis}}\), update \(p^{(t+1)}=(1-\beta)a^{(t)}+\beta s^{(t+1)}\) and mark visible; otherwise set \(p^{(t+1)}=s^{(t+1)}\) and mark occluded.</span></li>
+              </ol>
+              <div class="hp"><span><b>k</b> = 8</span><span><b>τ</b><sub>vis</sub> = 0.5</span><span><b>β</b> = 0.3</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-panel="finetune">
+          <figure class="figure-panel">
+            <picture>
+              <source srcset="./files/assets/finetuning2.webp" type="image/webp">
+              <img src="./files/assets/finetuning2.png" alt="Fine-tuning cross-attention readout" width="2196" height="544" loading="lazy" decoding="async">
+            </picture>
+            <figcaption>Fine-tuning adds a supervised cross-attention readout over frozen or trainable encoder latents to sharpen localization and occlusion handling.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="results">
+      <p class="kicker"><span class="num">03</span> Results map</p>
+      <h2>Coherent across motion and occlusion</h2>
+      <p class="section-lead left">Zero-shot tracks emerge directly from Gaussian motion, and light supervision sharpens the readout.</p>
+      <div class="glance-grid">
+        <div class="card">
+          <span class="badge">Zero-shot</span>
+          <h3>No labels, no flow, no boxes</h3>
+          <p>Stable tracks emerge directly from Gaussian motion.</p>
+          <a class="chip" href="#zeroshot">Watch zero-shot</a>
+        </div>
+        <div class="card">
+          <span class="badge">Comparisons</span>
+          <h3>Stable over time</h3>
+          <p>Video-GMAE tends to preserve temporal coherence; GMRW-C can keep tiny fast details tighter.</p>
+          <a class="chip" href="#comparisons">Compare methods</a>
+        </div>
+        <div class="card">
+          <span class="badge">Fine-tuned</span>
+          <h3>Supervised readout</h3>
+          <p>Kubric labels sharpen trajectories and occlusion handling.</p>
+          <a class="chip" href="#finetune">View fine-tuned</a>
+        </div>
+        <div class="card">
+          <span class="badge">Reconstructions</span>
+          <h3>What the Gaussians capture</h3>
+          <p>Rendered pretraining outputs show coarse structure, motion, and the limits of the Gaussian budget.</p>
+          <a class="chip" href="#recon">Watch recon</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="zeroshot">
+      <p class="kicker"><span class="num">04</span> Tracks across benchmarks</p>
+      <h2>Zero-shot tracking</h2>
+      <p class="section-lead left">Correspondence emerges directly from the moving Gaussians. The tracker below uses no tracking labels.</p>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-shell">
+            <video controls preload="none" loop width="672" height="672" poster="./files/assets/zeroshot-davis-thumb.webp" data-poster-dark="./files/assets/zeroshot-davis-thumb.webp" data-poster-light="./files/assets/zeroshot-davis-thumb-light.webp">
+              <source data-src="./files/assets/zeroshot-davis-chained-opt.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="video-caption">DAVIS zero-shot: animals, crowds, vehicles, and occlusions.</p>
+        </div>
+        <div class="video-card">
+          <div class="video-shell">
+            <video controls preload="none" loop width="672" height="672" poster="./files/assets/zeroshot-kinetics-thumb.webp" data-poster-dark="./files/assets/zeroshot-kinetics-thumb.webp" data-poster-light="./files/assets/zeroshot-kinetics-thumb-light.webp">
+              <source data-src="./files/assets/zeroshot-kinetics-chained-opt.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="video-caption">Kinetics zero-shot: everyday action clips with varied motion.</p>
+        </div>
+        <div class="video-card">
+          <div class="video-shell">
+            <video controls preload="none" loop width="672" height="448" poster="./files/assets/zeroshot-failure-thumb.webp" data-poster-dark="./files/assets/zeroshot-failure-thumb.webp" data-poster-light="./files/assets/zeroshot-failure-thumb-light.webp">
+              <source data-src="./files/assets/zeroshot-failure-opt.mp4" type="video/mp4">
+            </video>
+          </div>
+          <p class="video-caption">Failure cases: camera motion and fine detail can stress the Gaussian budget.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="comparisons">
+      <p class="kicker"><span class="num">05</span> Comparisons</p>
+      <h2>Video-GMAE vs. GMRW-C</h2>
+      <p class="section-lead left">Video-GMAE is more temporally stable in many clips; GMRW-C can better preserve tiny, fast details.</p>
+      <div class="video-grid two">
+        <div class="video-card crop-y">
+          <video controls preload="none" width="1280" height="1280" poster="./files/assets/comparison-grid1-thumb.webp" data-poster-dark="./files/assets/comparison-grid1-thumb.webp" data-poster-light="./files/assets/comparison-grid1-thumb-light.webp">
+            <source data-src="./files/assets/comparison_grid1-opt.mp4" type="video/mp4">
+          </video>
+          <p class="video-caption">TAP-Vid Kinetics comparison.</p>
+        </div>
+        <div class="video-card crop-y">
+          <video controls preload="none" width="1280" height="1280" poster="./files/assets/comparison-grid2-thumb.webp" data-poster-dark="./files/assets/comparison-grid2-thumb.webp" data-poster-light="./files/assets/comparison-grid2-thumb-light.webp">
+            <source data-src="./files/assets/comparison_grid2-opt.mp4" type="video/mp4">
+          </video>
+          <p class="video-caption">TAP-Vid DAVIS comparison.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="finetune">
+      <p class="kicker"><span class="num">06</span> Fine-tuning</p>
+      <h2>Fine-tuned point tracks</h2>
+      <p class="section-lead left">Tuning on labeled tracks from Kubric improves tracking further.</p>
+      <div class="video-grid two">
+        <div class="video-card">
+          <video controls preload="none" loop width="672" height="672" poster="./files/assets/finetune-davis-thumb.webp" data-poster-dark="./files/assets/finetune-davis-thumb.webp" data-poster-light="./files/assets/finetune-davis-thumb-light.webp">
+            <source data-src="./files/assets/finetune-davis-chained-opt.mp4" type="video/mp4">
+          </video>
+          <p class="video-caption">Fine-tuned: TAP-Vid DAVIS, two looped sequences.</p>
+        </div>
+        <div class="video-card">
+          <video controls preload="none" loop width="672" height="672" poster="./files/assets/finetune-kinetics-thumb.webp" data-poster-dark="./files/assets/finetune-kinetics-thumb.webp" data-poster-light="./files/assets/finetune-kinetics-thumb-light.webp">
+            <source data-src="./files/assets/finetune-kinetics-chained-opt.mp4" type="video/mp4">
+          </video>
+          <p class="video-caption">Fine-tuned: TAP-Vid Kinetics, two looped sequences.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="recon">
+      <p class="kicker"><span class="num">07</span> Reconstructions</p>
+      <h2>Pretraining renders</h2>
+      <p class="section-lead left">Rendered Gaussian trajectories during pretraining capture coarse structure and motion; fine detail is limited by the 256-Gaussian budget.</p>
+      <div class="video-grid">
+        <div class="video-card">
+          <video controls preload="none" width="896" height="672" poster="./files/assets/renders1-thumb.webp" data-poster-dark="./files/assets/renders1-thumb.webp" data-poster-light="./files/assets/renders1-thumb-light.webp">
+            <source data-src="./files/assets/renders1-opt.mp4" type="video/mp4">
+          </video>
+          <p class="video-caption">Dynamic reconstruction from Gaussians.</p>
+        </div>
+        <div class="video-card">
+          <video controls preload="none" width="896" height="672" poster="./files/assets/renders2-thumb.webp" data-poster-dark="./files/assets/renders2-thumb.webp" data-poster-light="./files/assets/renders2-thumb-light.webp">
+            <source data-src="./files/assets/renders2-opt.mp4" type="video/mp4">
+          </video>
+          <p class="video-caption">Dynamic reconstruction from Gaussians.</p>
+        </div>
+        <div class="video-card">
+          <video controls preload="none" width="896" height="672" poster="./files/assets/renders3-thumb.webp" data-poster-dark="./files/assets/renders3-thumb.webp" data-poster-light="./files/assets/renders3-thumb-light.webp">
+            <source data-src="./files/assets/renders3-opt.mp4" type="video/mp4">
+          </video>
+          <p class="video-caption">Dynamic reconstruction from Gaussians.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="quantitative">
+      <p class="kicker"><span class="num">08</span> Benchmarks</p>
+      <h2>Zero-shot and fine-tuned results</h2>
+      <p class="section-lead left">Reading motion straight off the Gaussians tops prior SSL trackers; Kubric labels lift the readout into supervised tracker range.</p>
+
+      <div class="benchmark-grid">
+        <div class="table-panel">
+          <table class="rt">
+            <thead>
+              <tr><th>AJ ↑ · no labels</th><th>Prior SSL</th><th>Ours</th><th>Δ OA</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Kubric</td><td>54.2</td><td class="ours">54.3</td><td class="oa">+9.3</td></tr>
+              <tr><td>DAVIS</td><td><strong>41.8</strong></td><td>41.3</td><td class="oa">+6.9</td></tr>
+              <tr><td>Kinetics</td><td>46.9</td><td class="ours">60.1</td><td class="oa">+8.9</td></tr>
+            </tbody>
+          </table>
+          <p class="result-note"><span class="rtag zs">Zero-shot</span> <b>60.1 AJ</b> on Kinetics with no trained tracking readout.</p>
+        </div>
+
+        <div class="bar-panel">
+          <div class="mono-label">Frozen encoder, Kinetics AJ · supervised readout</div>
+          <div class="bars">
+            <div class="bar"><div class="top"><span class="name">MAE-ST</span><span class="val">42.3</span></div><div class="track"><div class="fill" style="width:56%"></div></div></div>
+            <div class="bar"><div class="top"><span class="name">VideoMAE</span><span class="val">46.9</span></div><div class="track"><div class="fill" style="width:62%"></div></div></div>
+            <div class="bar win"><div class="top"><span class="name">Video-GMAE</span><span class="val">65.1</span></div><div class="track"><div class="fill" style="width:87%"></div></div></div>
+          </div>
+          <p class="result-note"><span class="rtag ft">Fine-tuned</span> Reaches <b>74.0 / 75.1 AJ</b> on Kubric / Kinetics, matching state-of-the-art supervised trackers.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content" id="limitations">
+      <p class="kicker"><span class="num">09</span> Limits</p>
+      <h2>Where it breaks</h2>
+      <ul class="list-tight">
+        <li>Static-camera assumptions in pretraining can hurt videos with strong camera motion.</li>
+        <li>The 256-Gaussian budget limits fine-detail fidelity in busy scenes.</li>
+        <li>Longer-frame correspondence regularization can degrade learning on very long horizons.</li>
+      </ul>
+    </section>
+
+    <section class="content" id="bibtex">
+      <p class="kicker"><span class="num">10</span> Citation</p>
+      <h2>BibTeX</h2>
+      <div class="bibtex-wrap">
+        <button class="bibtex-copy" type="button" data-copy="#bibtex-code" aria-label="Copy BibTeX" title="Copy BibTeX"><span class="ms">content_copy</span></button>
+        <pre><code id="bibtex-code">@InProceedings{Baranwal_2026_CVPR,
+  author    = {Baranwal, Tanish and Singh, Himanshu Gaurav and Rajasegaran, Jathushan and Malik, Jitendra},
+  title     = {Tracking by Predicting 3-D Gaussians Over Time},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  month     = {June},
+  year      = {2026},
+  pages     = {42527-42537}
+}</code></pre>
+      </div>
+    </section>
+
+    <footer class="content footer" id="acknowledgements">
+      <div class="footer-minimal">
+        <div class="footer-chips">
+          <span class="footer-chip"><span class="ms">calendar_today</span>Updated: Jun 2026</span>
+          <span class="footer-chip"><span class="ms">shield</span>CC BY-SA 4.0</span>
+        </div>
+        <p class="footer-meta">Template lineage: <a href="https://monst3r-project.github.io/" target="_blank" rel="noopener">MonST3R</a> → <a href="https://sd-complements-dino.github.io/" target="_blank" rel="noopener">SD+DINO</a> → <a href="https://dreambooth.github.io/" target="_blank" rel="noopener">DreamBooth</a>.</p>
+      </div>
+    </footer>
+  </main>
+
+  <button id="back-to-top" aria-label="Back to top"><span class="ms">vertical_align_top</span></button>
+
+  <script src="./files/site.js?v=media-opt-1"></script>
+</body>
+</html>
