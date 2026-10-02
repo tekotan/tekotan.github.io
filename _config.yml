@@ -12,7 +12,8 @@ description: > # the ">" symbol means to ignore newlines until "footer_text:"
 footer_text: ""
 keywords: tanish-baranwal, computer-vision, diffusion-models, cardiac-imaging # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: ⚛️ # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: bird-shutter.ico # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+touch_icon: bird-shutter-180.png
 
 url: https://tekotan.github.io # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/. Leave blank for root
