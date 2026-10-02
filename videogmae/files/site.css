@@ -1,24 +1,27 @@
 :root {
   color-scheme: dark;
-  --bg: #0a0b0d;
-  --paper: #111214;
-  --panel: #18191c;
-  --panel-2: #202126;
-  --ink: #f2f0ec;
-  --ink-2: #c8c3bc;
-  --ink-3: #8f8b84;
-  --ink-4: #68645e;
-  --line: rgba(255, 255, 255, 0.13);
+  --bg: #1c1c1d;
+  --paper: #1c1c1d;
+  --panel: #212529;
+  --panel-2: #2b2f33;
+  --ink: #e8e8e8;
+  --ink-2: #c5c5c5;
+  --ink-3: #a0a0a0;
+  --ink-4: #828282;
+  --line: #424246;
   --line-2: rgba(255, 255, 255, 0.08);
-  --accent: #f07818;
-  --accent-2: #f6a04d;
-  --accent-soft: rgba(240, 120, 24, 0.14);
+  --accent: #2698ba;
+  --on-accent: #1c1c1d;
+  --accent-2: #2698ba;
+  --accent-soft: rgba(38, 152, 186, 0.14);
   --danger: #e66a5d;
-  --shadow: 0 28px 80px rgba(0, 0, 0, 0.36);
-  --shadow-sm: 0 12px 34px rgba(0, 0, 0, 0.24);
+  --shadow: none;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.12);
   --radius: 8px;
-  --sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --sans: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+  --mono: "SF Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", monospace;
   --color-primary: var(--accent);
   --color-secondary: var(--accent-2);
   --color-text-primary: var(--ink);
@@ -29,22 +32,23 @@
 @media (prefers-color-scheme: light) {
   :root {
     color-scheme: light;
-    --bg: #e7e7ec;
+    --bg: #ffffff;
     --paper: #ffffff;
     --panel: #f5f5f7;
     --panel-2: #ececef;
-    --ink: #1d1d1f;
-    --ink-2: #494a4e;
-    --ink-3: #86868b;
+    --ink: #000000;
+    --ink-2: #424242;
+    --ink-3: #737373;
     --ink-4: #aeaeb2;
     --line: #e3e3e6;
     --line-2: #ececee;
-    --accent: #e8650e;
-    --accent-2: #a94f17;
-    --accent-soft: #fbeee3;
+    --accent: #b509ac;
+    --on-accent: #ffffff;
+    --accent-2: #b509ac;
+    --accent-soft: rgba(181, 9, 172, 0.07);
     --danger: #c54f44;
-    --shadow: 0 30px 80px -26px rgba(20, 22, 30, 0.32);
-    --shadow-sm: 0 10px 30px rgba(20, 22, 30, 0.08);
+    --shadow: none;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -63,6 +67,7 @@ body {
   color: var(--ink);
   font-family: var(--sans);
   font-size: 16px;
+  font-weight: 300;
   line-height: 1.56;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -79,14 +84,14 @@ h1,
 h2,
 h3 {
   color: var(--ink);
-  font-weight: 650;
+  font-weight: 400;
   letter-spacing: 0;
 }
 
 h1 {
   margin-bottom: 12px;
-  font-size: 52px;
-  line-height: 0.98;
+  font-size: 44px;
+  line-height: 1.1;
 }
 
 h1 .line {
@@ -141,8 +146,8 @@ picture {
   margin: 0 auto;
   overflow: hidden;
   background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  border: 0;
+  border-radius: 0;
   box-shadow: var(--shadow);
 }
 
@@ -205,15 +210,13 @@ picture {
   display: inline-flex;
   align-items: center;
   margin-left: auto;
-  min-height: 28px;
-  padding: 5px 10px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  color: var(--ink-3);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  min-height: 26px;
+  padding: 4px 9px;
+  border-radius: 4px;
+  background: #0076df;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -276,16 +279,16 @@ picture {
   gap: 9px;
   margin: 0 0 10px;
   color: var(--ink-3);
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 12px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .kicker .num {
   color: var(--accent);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
@@ -407,11 +410,11 @@ figcaption,
   display: block;
   margin-top: 6px;
   color: var(--ink-3);
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   line-height: 1.35;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .setup-strip .wide .num {
@@ -437,33 +440,30 @@ figcaption,
   align-items: center;
   justify-content: center;
   gap: 7px;
-  min-height: 38px;
-  padding: 8px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
+  min-height: 32px;
+  padding: 5px 12px;
+  border: 1px solid var(--ink-2);
+  border-radius: 4px;
   background: var(--paper);
   color: var(--ink);
   font-size: 14px;
-  font-weight: 650;
-  transition: background 0.16s ease, border-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+  font-weight: 400;
+  transition:
+    background 0.16s ease,
+    border-color 0.16s ease,
+    color 0.16s ease;
 }
 
 .btn.primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #16110d;
-}
-
-.btn:hover,
-.chip:hover {
-  transform: translateY(-1px);
   border-color: var(--accent);
   color: var(--accent);
 }
 
-.btn.primary:hover {
-  background: var(--accent-2);
-  color: #16110d;
+.btn:hover,
+.chip:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .ms {
@@ -471,7 +471,11 @@ figcaption,
   align-items: center;
   font-family: "Material Symbols Rounded";
   font-size: 18px;
-  font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 500,
+    "GRAD" 0,
+    "opsz" 24;
   line-height: 1;
 }
 
@@ -506,11 +510,11 @@ figcaption,
 .idea-grid .card h3 {
   margin-bottom: 10px;
   color: var(--ink-3);
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .card .chip {
@@ -523,11 +527,11 @@ figcaption,
   align-self: flex-start;
   margin-bottom: 10px;
   color: var(--ink-3);
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .algo,
@@ -542,10 +546,10 @@ figcaption,
 .mono-label {
   margin-bottom: 10px;
   color: var(--ink-3);
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 11px;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .tabs {
@@ -575,7 +579,7 @@ figcaption,
 
 .tab.active {
   background: var(--accent);
-  color: #16110d;
+  color: var(--on-accent);
 }
 
 .tab:focus-visible,
@@ -619,10 +623,10 @@ figcaption,
   gap: 10px;
   margin-bottom: 11px;
   color: var(--ink-3);
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .algo .alab b {
@@ -655,7 +659,7 @@ figcaption,
   font-family: var(--mono);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
@@ -759,12 +763,12 @@ figcaption,
   padding: 0 0 10px;
   border-bottom: 1px solid var(--line);
   color: var(--ink-3);
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
   font-weight: 500;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
   text-align: right;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .rt th:first-child {
@@ -805,16 +809,16 @@ figcaption,
   margin-right: 6px;
   padding: 3px 7px;
   border-radius: 5px;
-  font-family: var(--mono);
+  font-family: var(--sans);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .rtag.zs {
   background: var(--accent);
-  color: #16110d;
+  color: var(--on-accent);
 }
 
 .rtag.ft {
@@ -913,7 +917,10 @@ figcaption,
   background: rgba(255, 255, 255, 0.08);
   color: var(--ink);
   cursor: pointer;
-  transition: border-color 0.16s ease, color 0.16s ease, background 0.16s ease;
+  transition:
+    border-color 0.16s ease,
+    color 0.16s ease,
+    background 0.16s ease;
 }
 
 .bibtex-copy:hover {
@@ -986,7 +993,9 @@ pre {
   cursor: pointer;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
 }
 
 #back-to-top.visible {
@@ -1050,7 +1059,9 @@ pre {
   opacity: 0;
   transform: translateX(6px);
   white-space: nowrap;
-  transition: opacity 0.16s ease, transform 0.16s ease;
+  transition:
+    opacity 0.16s ease,
+    transform 0.16s ease;
 }
 
 .side-nav li:hover .label,
